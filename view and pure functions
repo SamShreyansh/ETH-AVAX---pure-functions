@@ -1,0 +1,31 @@
+// SPDX-License-Identifier: MIT
+pragma solidity 0.8.26;
+
+contract calculator {
+    uint256 private storedNumber;
+
+    function setNumber(uint256 _number) public {
+        storedNumber = _number;
+    }
+
+    function getNumber() public view returns (uint256) {
+        return storedNumber;
+    }
+    
+    function add(uint256 a, uint256 b) public pure returns (uint256) {
+        return a + b;
+    }
+
+    function subtract(uint256 a, uint256 b) public pure returns (uint256) { 
+        return a-b; 
+    }
+
+    function multiply(uint256 a, uint256 b) public pure returns (uint256) { 
+        return a*b; 
+    }
+
+    function divide(uint256 a, uint256 b) public pure returns (uint256) {
+        require(b != 0, "division by zero"); 
+        return a/b; 
+    }
+}
